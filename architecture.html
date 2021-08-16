@@ -6,7 +6,7 @@
         <title>Architecture - lockc Documentation</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="**lockc** is open source software for providing MAC (Mandatory Access Control) implemented in Rust">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html" class="active"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="starting.html"><strong aria-hidden="true">3.</strong> Getting started</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html" class="active"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">3.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/containerized.html"><strong aria-hidden="true">3.1.1.</strong> Containerized</a></li><li class="chapter-item expanded "><a href="build/meson.html"><strong aria-hidden="true">3.1.2.</strong> Meson</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">3.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">3.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">3.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">3.3.2.</strong> Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/conf-libvirt.html"><strong aria-hidden="true">3.3.3.</strong> Configure libvirt</a></li><li class="chapter-item expanded "><a href="terraform/start-vm.html"><strong aria-hidden="true">3.3.4.</strong> Running VMs</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,20 +134,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+                        <h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
 <p>The project consists of 3 parts:</p>
 <ul>
-<li>the set of BPF programs (written in C)</li>
+<li>the set of BPF programs (written in C)
+<ul>
 <li>programs for monitoring processes, which detects whether new processes
 are running inside any container, which means applying policies on them</li>
 <li>programs attached to particular LSM hooks, which allow or deny actions
 based on the policy applied to the container (currently all containers have
 the <code>baseline</code> policy applied, the mechanism of differentiating between
 policies per container/pod is yet to be implemented)</li>
-<li><strong>lockcd</strong> - the userspace program (written in Rust)</li>
+</ul>
+</li>
+<li><strong>lockcd</strong> - the userspace program (written in Rust)
+<ul>
 <li>loads the BPF programs into the kernel, pins them in BPFFS</li>
 <li>in future, it's going to serve as the configuration manager and log
 collector</li>
+</ul>
+</li>
 <li><strong>lockc-runc-wrapper</strong> - a wraper for runc which registers new containers
 and determines which policy should be applied on a container</li>
 </ul>
@@ -156,10 +162,10 @@ and determines which policy should be applied on a container</li>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="starting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="configuration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -168,10 +174,10 @@ and determines which policy should be applied on a container</li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="starting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="configuration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

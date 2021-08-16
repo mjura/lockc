@@ -6,7 +6,7 @@
         <title>Introduction - lockc Documentation</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="**lockc** is open source software for providing MAC (Mandatory Access Control) implemented in Rust">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="starting.html"><strong aria-hidden="true">3.</strong> Getting started</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">3.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/containerized.html"><strong aria-hidden="true">3.1.1.</strong> Containerized</a></li><li class="chapter-item expanded "><a href="build/meson.html"><strong aria-hidden="true">3.1.2.</strong> Meson</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">3.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">3.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">3.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">3.3.2.</strong> Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/conf-libvirt.html"><strong aria-hidden="true">3.3.3.</strong> Configure libvirt</a></li><li class="chapter-item expanded "><a href="terraform/start-vm.html"><strong aria-hidden="true">3.3.4.</strong> Running VMs</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,7 +134,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p>lockc is open source software for providing MAC (Mandatory Access Control)
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>lockc</strong> is open source software for providing MAC (Mandatory Access Control)
 type of security audit for container workloads.</p>
 <p>The main technology behind lockc is <a href="https://ebpf.io/">eBPF</a> - to be more
 precise, its ability to attach to <a href="https://www.kernel.org/doc/html/latest/bpf/bpf_lsm.html">LSM hooks</a></p>
@@ -142,8 +143,13 @@ precise, its ability to attach to <a href="https://www.kernel.org/doc/html/lates
 production environments. Currently we don't publish any official binaries or
 packages to use, except of a Rust crate. Currently the most convenient way
 to use it is to use the source code and follow the guide.</p>
+<h2 id="contributing"><a class="header" href="#contributing">Contributing</a></h2>
 <p>If you need help or want to talk with contributors, please come chat with
 us on <code>#lockc</code> channel on the <a href="https://discord.gg/799cmsYB4q">Rust Cloud Native Discord server</a>.</p>
+<p>You can find the source code on <a href="https://github.com/rancher-sandbox/lockc">GitHub</a> and issues and feature requests can be posted on the <a href="https://github.com/rancher-sandbox/lockc/issues">GitHub issue tracker</a>. <strong>lockc</strong> relies on the community to fix bugs and
+add features: if you'd like to contribute, please read the <a href="https://github.com/rancher-sandbox/lockc/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> guide and consider opening <a href="https://github.com/rancher-sandbox/lockc/pulls">pull request</a>.</p>
+<h2 id="license"><a class="header" href="#license">License</a></h2>
+<p>The lockc source and documentation are released under the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.</p>
 
                     </main>
 
