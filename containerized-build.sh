@@ -2,7 +2,7 @@
 
 set -e
 
-CRUNTIME=${CRUNTIME:-docker}
+CRUNTIME=${CRUNTIME:-"DOCKER_BUILDKIT=1 docker"}
 
 DESTDIR=${DESTDIR:-/}
 PREFIX=${PREFIX:-"/usr/local"}
@@ -11,6 +11,7 @@ UNITDIR=${UNITDIR:-"${PREFIX}/lib/systemd/system"}
 SYSCONFDIR=${SYSCONFDIR:-"/etc"}
 
 function do_gen() {
+    
     ${CRUNTIME} build \
         --build-arg USER_ID=$(id -u) \
         --build-arg GROUP_ID=$(id -g) \
