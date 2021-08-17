@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">3.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/containerized.html"><strong aria-hidden="true">3.1.1.</strong> Containerized</a></li><li class="chapter-item expanded "><a href="build/meson.html"><strong aria-hidden="true">3.1.2.</strong> Meson</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">3.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">3.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">3.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">3.3.2.</strong> Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/conf-libvirt.html"><strong aria-hidden="true">3.3.3.</strong> Configure libvirt</a></li><li class="chapter-item expanded "><a href="terraform/start-vm.html"><strong aria-hidden="true">3.3.4.</strong> Running VMs</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">3.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/containerized.html"><strong aria-hidden="true">3.1.1.</strong> Containerized</a></li><li class="chapter-item expanded "><a href="build/meson.html"><strong aria-hidden="true">3.1.2.</strong> Meson</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">3.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">3.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">3.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">3.3.2.</strong> (Optional) Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/conf-libvirt.html"><strong aria-hidden="true">3.3.3.</strong> Configure libvirt</a></li><li class="chapter-item expanded "><a href="terraform/start-vm.html"><strong aria-hidden="true">3.3.4.</strong> Running VMs</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -176,16 +176,16 @@ and determines which policy should be applied on a container</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
 <ul>
-<li><a href="build/README.html">Build</a> How to build lockc from the sources</li>
-<li><a href="use/README.html">Use</a> Configuring and using lockc locally</li>
-<li><a href="terraform/README.html">Provision</a> Using Terraform for provisioning lockc</li>
+<li><a href="build/README.html">Build</a> - How to build lockc from the sources</li>
+<li><a href="use/README.html">Use</a> - Configuring and using lockc locally</li>
+<li><a href="terraform/README.html">Provision</a> - :Using Terraform for provisioning lockc</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="building-lockc"><a class="header" href="#building-lockc">Building lockc</a></h2>
 <p>The first step to try out lockc is to build it. There are two ways to do
 that:</p>
 <ul>
-<li><strong><a href="build/containerized.html">Containerized</a></strong> build project binaries within container</li>
-<li><strong><a href="build/meson.html">Meson</a></strong> build binaries with Meson</li>
+<li><strong><a href="build/containerized.html">Containerized</a></strong> - build project binaries within container</li>
+<li><strong><a href="build/meson.html">Meson</a></strong> - build binaries with Meson</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h3 id="containerized-build"><a class="header" href="#containerized-build">Containerized build</a></h3>
 <p>One option for building lockc is using the <code>containerized-build.sh</code> script
@@ -288,10 +288,10 @@ Kubernetes.</p>
 </ul>
 <p>Then we can proceed with following steps:</p>
 <ul>
-<li><strong><a href="terraform/base-image.html">Base image</a></strong> The first step is to build the VM image</li>
-<li><strong><a href="terraform/custom-kernel.html">Custom kernel</a></strong> <em>Optional</em> building the image with a custom kernel</li>
-<li><strong><a href="terraform/conf-libvirt.html">Configure libvirt</a></strong> Configure libvirt environment</li>
-<li><strong><a href="terraform/start-vm.html">Running VMs</a></strong> Starting VMs</li>
+<li><strong><a href="terraform/base-image.html">Base image</a></strong> - The first step is to build the VM image</li>
+<li><strong><a href="terraform/custom-kernel.html">Custom kernel</a></strong> <em>Optional</em> - building the image with a custom kernel</li>
+<li><strong><a href="terraform/conf-libvirt.html">Configure libvirt</a></strong> - Configure libvirt environment</li>
+<li><strong><a href="terraform/start-vm.html">Running VMs</a></strong> - Starting VMs</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h4 id="building-the-base-image"><a class="header" href="#building-the-base-image">Building the base image</a></h4>
 <p>The first step is to build the VM image.</p>
@@ -355,11 +355,9 @@ addresses of virtual machines, like:</p>
 <pre><code class="language-bash">ip_control_planes = {
   &quot;lockc-control-plane-0&quot; = &quot;10.16.0.225&quot;
 }
-
-You can simply ssh to them using the `opensuse` user:
-
-```bash
-ssh opensuse@10.16.0.255
+</code></pre>
+<p>You can simply ssh to them using the <code>opensuse</code> user:</p>
+<pre><code class="language-bash">ssh opensuse@10.16.0.255
 </code></pre>
 <p>Inside the VM we can check whether Kubernetes is running:</p>
 <pre><code class="language-bash"># kubectl get pods -A
