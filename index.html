@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">3.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/containerized.html"><strong aria-hidden="true">3.1.1.</strong> Containerized</a></li><li class="chapter-item expanded "><a href="build/meson.html"><strong aria-hidden="true">3.1.2.</strong> Meson</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">3.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">3.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">3.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">3.3.2.</strong> (Optional) Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/conf-libvirt.html"><strong aria-hidden="true">3.3.3.</strong> Configure libvirt</a></li><li class="chapter-item expanded "><a href="terraform/start-vm.html"><strong aria-hidden="true">3.3.4.</strong> Running VMs</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="containers-do-not-contain.html"><strong aria-hidden="true">2.</strong> Containers do not contain</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">4.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/index.html"><strong aria-hidden="true">4.1.</strong> Build</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="build/dapper.html"><strong aria-hidden="true">4.1.1.</strong> Dapper</a></li><li class="chapter-item expanded "><a href="build/cargo.html"><strong aria-hidden="true">4.1.2.</strong> Cargo</a></li></ol></li><li class="chapter-item expanded "><a href="use/index.html"><strong aria-hidden="true">4.2.</strong> Use</a></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">4.3.</strong> Provision</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="terraform/base-image.html"><strong aria-hidden="true">4.3.1.</strong> Base image</a></li><li class="chapter-item expanded "><a href="terraform/custom-kernel.html"><strong aria-hidden="true">4.3.2.</strong> (Optional) Custom kernel</a></li><li class="chapter-item expanded "><a href="terraform/libvirt.html"><strong aria-hidden="true">4.3.3.</strong> Use libvirt</a></li><li class="chapter-item expanded "><a href="terraform/openstack.html"><strong aria-hidden="true">4.3.4.</strong> Use OpenStack</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="policies/index.html"><strong aria-hidden="true">5.</strong> Policies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="policies/mount.html"><strong aria-hidden="true">5.1.</strong> Mount</a></li><li class="chapter-item expanded "><a href="policies/syslog.html"><strong aria-hidden="true">5.2.</strong> Syslog</a></li></ol></li><li class="chapter-item expanded "><a href="demos/index.html"><strong aria-hidden="true">6.</strong> Demos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="demos/mount.html"><strong aria-hidden="true">6.1.</strong> Mount</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,6 +137,14 @@
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
 <p><strong>lockc</strong> is open source software for providing MAC (Mandatory Access Control)
 type of security audit for container workloads.</p>
+<p>The main reason why <strong>lockc</strong> exists is that <strong>containers do not contain</strong>.
+Containers are not as secure and isolated as VMs. By default, they expose
+a lot of information about host OS and provide ways to &quot;break out&quot; from the
+container. <strong>lockc</strong> aims to provide more isolation to containers and make them
+more secure.</p>
+<p>The <a href="containers-do-not-contain.html">Containers do not contain</a> documentation
+section explains why we mean by that phrase and what kind of behavior we want
+to restrict with <strong>lockc</strong>.</p>
 <p>The main technology behind lockc is <a href="https://ebpf.io/">eBPF</a> - to be more
 precise, its ability to attach to <a href="https://www.kernel.org/doc/html/latest/bpf/bpf_lsm.html">LSM hooks</a></p>
 <p>Please note that currently lockc is an experimental project, not meant for
@@ -146,16 +154,23 @@ to use it is to use the source code and follow the guide.</p>
 <h2 id="contributing"><a class="header" href="#contributing">Contributing</a></h2>
 <p>If you need help or want to talk with contributors, please come chat with
 us on <code>#lockc</code> channel on the <a href="https://discord.gg/799cmsYB4q">Rust Cloud Native Discord server</a>.</p>
-<p>You can find the source code on <a href="https://github.com/rancher-sandbox/lockc">GitHub</a> and issues and feature requests can be posted on the <a href="https://github.com/rancher-sandbox/lockc/issues">GitHub issue tracker</a>. <strong>lockc</strong> relies on the community to fix bugs and
-add features: if you'd like to contribute, please read the <a href="https://github.com/rancher-sandbox/lockc/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> guide and consider opening <a href="https://github.com/rancher-sandbox/lockc/pulls">pull request</a>.</p>
+<p>You can find the source code on <a href="https://github.com/rancher-sandbox/lockc">GitHub</a>
+and issues and feature requests can be posted on the
+<a href="https://github.com/rancher-sandbox/lockc/issues">GitHub issue tracker</a>.
+<strong>lockc</strong> relies on the community to fix bugs and add features: if you'd like
+to contribute, please read the <a href="https://github.com/rancher-sandbox/lockc/blob/master/CONTRIBUTING.md">CONTRIBUTING</a>
+guide and consider opening <a href="https://github.com/rancher-sandbox/lockc/pulls">pull request</a>.</p>
 <h2 id="license"><a class="header" href="#license">License</a></h2>
-<p>The lockc source and documentation are released under the <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.</p>
+<p><strong>lockc's</strong> userspace part is licensed under <a href="https://github.com/rancher-sandbox/lockc/blob/main/LICENSE">Apache License, version 2.0</a>.</p>
+<p>eBPF programs inside <a href="https://github.com/rancher-sandbox/lockc/tree/main/src/bpf">src/bpf directory</a>
+are licensed under <a href="https://github.com/rancher-sandbox/lockc/blob/main/src/bpf/LICENSE">GNU General Public License, version 2</a>.</p>
+<p>Documentation is licensed under <a href="https://www.mozilla.org/MPL/2.0/">Mozilla Public License v2.0</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="architecture.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="containers-do-not-contain.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -164,7 +179,7 @@ add features: if you'd like to contribute, please read the <a href="https://gith
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="architecture.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="containers-do-not-contain.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
