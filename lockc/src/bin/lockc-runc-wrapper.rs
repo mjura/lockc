@@ -6,6 +6,8 @@ use log4rs::append::file::FileAppender;
 use log4rs::config::{runtime::ConfigErrors, Appender, Config, Root};
 use uuid::Uuid;
 
+mod docker;
+
 // TODO: To be used for cri-o.
 // static ANNOTATION_K8S_LABELS: &str = "io.kubernetes.cri-o.Labels";
 
@@ -315,8 +317,21 @@ async fn main() -> anyhow::Result<()> {
                 Some(v) => std::path::PathBuf::from(v),
                 None => std::env::current_dir()?,
             };
-            let namespace = container_namespace(container_bundle)?;
-            let policy = policy_label(namespace).await?;
+
+            let namespace = container_namespace(&container_bundle);
+            let policy = policy_label(ns).await?;
+            lockc::add_container(container_key, pid_u, policy)?;
+            cmd.status().await?;
+
+            if namespace.is_ok() {
+                let policy = policy_label(ns).await?;
+            } else {
+                let docker_config = docker::config(&container_bundle);
+                let policy = match docker_config {
+                    Some(c) => docker::label(c),
+                    None => Ok(lockc::bpfstructs::container_policy_level_POLICY_LEVEL_BASELINE),
+                };
+            }
             lockc::add_container(container_key, pid_u, policy)?;
             cmd.status().await?;
         }
