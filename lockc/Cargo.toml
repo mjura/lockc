@@ -40,7 +40,7 @@ tracing-subscriber = { version = "0.3", features = ["json"] }
 [build-dependencies]
 anyhow = "1.0"
 bindgen = "0.59"
-libbpf-sys = { version = "0.6.1-1" }
+libbpf-sys = { version = "0.8.2+v0.8.1" }
 reqwest = { version = "0.11", features = ["blocking"] }
 tempfile = "3.2"
 thiserror = "1.0"
